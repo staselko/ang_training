@@ -1,0 +1,25 @@
+<div class="shop__list">
+    <div *ngFor="let product of items; index as productId" class="shop__item">
+        <img [src]="[product.image]" />
+        <h2><a [title]="product.name + ' info'" [routerLink]="['/products', product.id]">{{product.name}}</a></h2>
+        <h3>${{product.price}}</h3>
+        <button (click)="share()" class="btn">Share It!</button>        <button (click)="addToCart(product)" class="btn">Buy</button>
+    </div>
+</div>
+<div class="shop__weather">
+    <h2>Check Weather</h2>
+    <input [(ngModel)]="cityName" (keydown.enter)="onClick()" />
+    <button class="btn" (click)="onClick();">Check Weather</button>
+    <div>
+        <div *ngIf="weatherData else noWeather">
+            <div *ngFor="let weather of weatherData" id="weather-field">
+                <p>Город: {{weather.name }}</p>
+                <p>Температура: {{weather.temp | number: '1.0-0'}} &#8451; </p>
+                <p>На небе: {{weather.onSky | titlecase}}</p>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #noWeather>
+        <p>Input city name to see weather!</p>
+    </ng-template>

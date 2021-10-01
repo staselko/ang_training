@@ -1,0 +1,14 @@
+<head>
+  <title>{{product.name}}</title>
+</head>
+<div *ngIf="product" class="details">
+  <img [src]="product.image"/>  
+  <div class="details__description">
+    <h1>{{ product.name }}</h1>
+    <h2>{{ product.price | currency }}</h2>
+    <h3>{{ product.description }}</h3>
+    <p>{{time | date:'shortTime'}}</p>
+    <button (click)="addToCart(product)" class="btn">To Cart</button>
+    <app-quick-buy></app-quick-buy>
+  </div>
+</div>

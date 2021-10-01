@@ -1,0 +1,25 @@
+<div class="game-page" id="game-page">
+    <div>{{score.circles}}:{{score.crosses}}</div>
+    <div class="game-page__board" id="game-page__board-table">
+        <table class="game-page__board-table">
+            <tr>
+                <td id="0" (click)="addMark($event)"></td>
+                <td id="1" (click)="addMark($event)"></td>
+                <td id="2" (click)="addMark($event)"></td>
+            </tr>
+            <tr>
+                <td id="3" (click)="addMark($event)"></td>
+                <td id="4" (click)="addMark($event)"></td>
+                <td id="5" (click)="addMark($event)"></td>
+            </tr>
+            <tr>
+                <td id="6" (click)="addMark($event)"></td>
+                <td id="7" (click)="addMark($event)"></td>
+                <td id="8" (click)="addMark($event)"></td>
+            </tr>
+        </table>
+    </div>
+    <div *ngIf="resetButton">
+        `<button (click)="resetField()" class="btn">Reset</button>
+    </div>
+</div>

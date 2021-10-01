@@ -1,0 +1,20 @@
+.game-page__board-table td{
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+}
+
+.game-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cross {
+    background-color: black;
+}
+
+.circle {
+    background-color: red;
+}

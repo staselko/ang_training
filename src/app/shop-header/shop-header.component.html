@@ -1,0 +1,36 @@
+<header class="shop">
+    <div class="shop__header">
+        <div class="shop__header-item">
+            <a [routerLink]="['']">Home</a>
+        </div>
+        <!-- <div class="shop__header-item">
+            <a [routerLink]="['about']">About us</a>
+        </div> -->
+
+        <div class="shop__header-item">
+            <a [routerLink]="['cart']">Cart</a>
+        </div>
+
+        <div class="shop__header-item">
+            <a [routerLink]="['shipping']">Shipping prices</a>
+        </div>
+        <div class="shop__header-item">
+            <a [routerLink]="['todo']">todo</a>
+        </div>
+        <div class="shop__header-item">
+            <a [routerLink]="['tictac']">Tic Tac Toe</a>
+        </div>
+    </div>
+    <div class="shop__searching">
+        <input [(ngModel)]="phoneTitle" (ngModelChange)="checkItems()" id='searching-field' />
+        <div *ngIf="sortedItems" class="shop__searching-items">
+            <div *ngFor="let phone of sortedItems" class="shop__searching-items-phone">
+                <a [routerLink]="['/products', phone.id]"> 
+                    <img [src]=" [phone.image]" alt="" width="40px" height="40px">
+                    {{phone.name}}
+                </a>
+            </div>
+        </div>
+    </div>
+
+</header>

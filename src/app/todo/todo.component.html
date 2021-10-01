@@ -1,0 +1,28 @@
+<div class="todo">
+    <form [formGroup]="form" (ngSubmit)="addTodo()" class="todo__form">
+        <input type="text" formControlName="todoName" [(ngModel)]="addingInput">
+        <button type="submit" class="btn">Add todo</button>
+    </form>
+    <div *ngIf="todos.length!=0;else noTodos" class="todo__tasks">
+        <div *ngFor="let item of todos" class="todo" class="todo__tasks-item">
+            <div class="todo__tasks-item-info">
+                <h2>{{item.title}}</h2>
+                <p>{{item.time | date: "mediumTime"}}</p>
+            </div>
+            <div *ngIf="redactMenu">
+                <input type="text" [(ngModel)]="redactText" [value]="item.title">
+                <button (click)="agreeTodo(item.id)">ok</button>
+            </div>
+            <div class="todo__tasks-item-tools">
+                <div (click)="deleteTodo(item.id)">&#10006;</div>
+                <div (click)="redactTodo(item.id)">&#9881;</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<ng-template #noTodos>
+    <p>
+        No Todos!
+    </p>
+</ng-template>

@@ -1,0 +1,42 @@
+.todo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.todo__tasks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.todo__tasks-item {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    border: 1px solid black;
+    margin-top: 15px;
+}
+
+.todo__form {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    input {
+        width: 20%;
+        margin-bottom: 20px;
+    }
+
+}
+
+.todo__tasks-item-tools {
+    div {
+        margin-bottom: 30px;
+    }
+}

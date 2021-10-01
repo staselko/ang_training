@@ -1,0 +1,40 @@
+.cart__list {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.cart__list-item > p {
+    text-decoration: none;
+    color: #000;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.cart__list-item {
+    display: flex;
+    flex-direction: column;
+    img {
+        height: 300px;
+        width: 300px;
+    }
+}
+
+.cart__input {
+    height: 40px;
+    width: 300px;
+}
+
+
+.cart__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+}

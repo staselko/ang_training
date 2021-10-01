@@ -1,0 +1,19 @@
+<div> 
+    <h2> Quick Buy</h2>
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+        <div>
+            <label for="name">
+                Name
+            </label>
+            <input formControlName="name"/>
+        </div>
+    
+        <div>
+            <label for="address">
+                Adress
+            </label>
+            <input  formControlName="adress"/>
+        </div>
+        <button class="btn btn-form">Submit</button>
+    </form>
+</div>

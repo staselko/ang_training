@@ -1,0 +1,14 @@
+.details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 100px;
+}
+
+.details__description {
+    width: 40%;
+
+    h3 {
+        font-weight: lighter;
+    }
+}
