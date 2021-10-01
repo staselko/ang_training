@@ -47,13 +47,15 @@ export class TodoComponent implements OnInit {
     this.todos = this.todos.filter(item => item.id != id)
   }
 
-  redactMenu = false
+  redactMenu: number
   redactText = ''
 
   redactTodo(id) {
-    this.redactMenu = true
+    // this.redactMenu = true
     let item = this.todos.filter(item => item.id == id)
     this.redactText = item[0].title
+    console.log(document.getElementById(`todo-item${id}`))
+    this.redactMenu = id
   }
 
   agreeTodo(id) {
@@ -63,6 +65,6 @@ export class TodoComponent implements OnInit {
         item.time = new Date()
       }
     })
-    this.redactMenu = false
+    // this.redactMenu = false
   }
 }

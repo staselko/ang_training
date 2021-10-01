@@ -81,6 +81,9 @@ export class TicTacToeComponent implements OnInit {
     this.ids.push(cellId)
     this.circles.sort()
     this.winnerCheck()
+    if (this.ids.length == 9) {
+      this.endGame()
+    }
   }
 
   contains(where, what) {
