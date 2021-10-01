@@ -15,7 +15,13 @@ export class ShopHeaderComponent implements OnInit {
   constructor(private productsService: ProductsService) {
     this.shopItems = productsService.getData()
   }
+  el: any
   ngOnInit(): void {
+    this.el = document.getElementById('body')
+    this.el.addEventListener('click',(e)=>{
+      this.sortedItems = []
+      this.phoneTitle = ''
+    })
   }
 
   checkItems() {
@@ -36,5 +42,9 @@ export class ShopHeaderComponent implements OnInit {
     console.log(this.sortedItems.forEach(i=>console.log(i)))
   }
 
+  onKeyDown() {
+    this.sortedItems = []
+    this.phoneTitle = ''
+  }
 
 }
